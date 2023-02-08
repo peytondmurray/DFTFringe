@@ -21,12 +21,12 @@
 #include <QPrintDialog>
 #endif
 
-#include "IgramArea.h"
-#include "Circleoutline.h"
+#include "igramarea.h"
+#include "circleoutline.h"
 #include <QtGlobal>
 #include <math.h>
 
-#include "opencv/cv.h"
+#include <opencv2/opencv.hpp>
 #include "opencv2/imgproc.hpp"
 #include "opencv2/features2d.hpp"
 #include "graphicsutilities.h"
@@ -2409,5 +2409,3 @@ void IgramArea::setZoomMode(zoomMode mode){
     zoomFull();
 }
 #include "showaliasdlg.h"
-
-

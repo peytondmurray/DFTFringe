@@ -19,7 +19,7 @@
 #include <limits>
 #include <cmath>
 #include <QWidget>
-#include <opencv/cv.h>
+#include <opencv2/opencv.hpp>
 #include <QtWidgets/QMessageBox>
 #include <QDebug>
 #include "mainwindow.h"
@@ -67,11 +67,10 @@
 #include "utils.h"
 #include "wavefrontfilterdlg.h"
 #include "reportdlg.h"
-#include "Circleoutline.h"
+#include "circleoutline.h"
 #include <math.h>
 #include "transformwavefrontdlg.h"
 #include "psi_dlg.h"
-#include "opencv2/opencv.hpp"
 #include "oglrendered.h"
 #include "ui_oglrendered.h"
 cv::Mat theMask;
@@ -3187,4 +3186,3 @@ void SurfaceManager::tiltAnalysis(){
    yTilt->attach(pl1);
    pl1->show();
 }
-

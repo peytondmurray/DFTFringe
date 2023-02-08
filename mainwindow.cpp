@@ -33,12 +33,12 @@
 #include "simigramdlg.h"
 #include "usercolormapdlg.h"
 #include <qlayout.h>
-#include <opencv/cv.h>
+#include <opencv2/opencv.hpp>
 #include "simulationsview.h"
 #include "outlinehelpdocwidget.h"
 #include "bathastigdlg.h"
 #include "settingsigram.h"
-#include "Circleoutline.h"
+#include "circleoutline.h"
 #include "cameracalibwizard.h"
 #include "astigstatsdlg.h"
 #include "astigscatterplot.h"
@@ -46,7 +46,6 @@
 #include "regionedittools.h"
 #include "utils.h"
 #include "colorchannel.h"
-#include "opencv2/opencv.hpp"
 
 
 
@@ -1782,6 +1781,3 @@ void MainWindow::on_actionSmooth_current_wave_front_triggered()
     dlg->show();
     return;
 }
-
-
-

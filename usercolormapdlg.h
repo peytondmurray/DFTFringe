@@ -22,6 +22,7 @@
 #include <QList>
 #include <QColor>
 #include "qwt_color_map.h"
+#include "qwt_matrix_raster_data.h"
 #include "qwt_raster_data.h"
 #include "qwt_interval.h"
 #include "qwt_plot_spectrogram.h"
@@ -29,7 +30,7 @@
 namespace Ui {
 class userColorMapDlg;
 }
-class SpectrogramData2: public QwtRasterData
+class SpectrogramData2: public QwtMatrixRasterData
 {
 public:
     SpectrogramData2()

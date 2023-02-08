@@ -65,17 +65,16 @@
 #include <QtCore>
 #include <QtGui>
 #include <QLabel>
-#include <qscrollarea>
-#include "Circleoutline.h"
+#include "circleoutline.h"
 #include <list>
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include "dftthumb.h"
 #include <QTimer>
-#include <QVideoWidget>
-#include <QMediaPlayer>
-#include <QMediaPlaylist>
+#include <QtMultimediaWidgets/QVideoWidget>
+#include <QtMultimedia/QMediaPlayer>
+#include <QtMultimedia/QMediaPlaylist>
 #include <QScrollArea>
 #include "settingsigram.h"
 #include <QDockWidget>

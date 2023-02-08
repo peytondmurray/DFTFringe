@@ -17,7 +17,7 @@
 ****************************************************************************/
 #include "rotationdlg.h"
 #include "ui_rotationdlg.h"
-#include <opencv/cv.h>
+#include <opencv2/opencv.hpp>
 #include <qsettings.h>
 RotationDlg::RotationDlg( QList<int> list, QWidget *parent) :
     QDialog(parent),

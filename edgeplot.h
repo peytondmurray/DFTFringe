@@ -2,7 +2,7 @@
 #define EDGEPLOT_H
 
 #include <QDialog>
-#include <QtCharts>
+#include <QtCharts/QtCharts>
 namespace Ui {
 class EdgePlot;
 }

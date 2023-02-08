@@ -17,7 +17,7 @@
 ****************************************************************************/
 #include "simulationsview.h"
 #include "ui_simulationsview.h"
-#include "opencv/cv.h"
+#include <opencv2/opencv.hpp>
 #include <opencv2/imgproc.hpp>
 #include "mirrordlg.h"
 #include "zernikeprocess.h"
@@ -823,4 +823,3 @@ void SimulationsView::on_doLog_clicked(bool checked)
     set.setValue("psfDoLog", checked);
     on_MakePB_clicked();
 }
-
