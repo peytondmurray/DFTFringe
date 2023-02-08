@@ -1,6 +1,6 @@
 #include "transformwavefrontdlg.h"
 #include "ui_transformwavefrontdlg.h"
-#include "opencv/cv.h"
+#include <opencv2/opencv.hpp>
 #include "opencv/highgui.h"
 #include "surfacemanager.h"
 TransformWaveFrontDlg::TransformWaveFrontDlg( QWidget *parent) :

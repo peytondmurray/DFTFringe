@@ -2,8 +2,10 @@ project(
   'DFTFringe',
   'cpp',
   version: '6.2',
+  default_options: [
+    'warning_level=0'
+  ]
 )
-
 
 qt5_mod = import('qt5')
 qt5widgets = dependency(
@@ -357,5 +359,8 @@ qt5widgets = dependency('Qt5Widgets')
 q5exe = executable(
   'DFTFringe',
   sources : [sources, processed],
-  dependencies: [armadillo, opencv, lapack, blas, qwt, qt5widgets]
+  dependencies: [armadillo, opencv, lapack, blas, qwt, qt5widgets],
+  cpp_args: [
+    '-w'
+  ]
 )

@@ -1,7 +1,7 @@
 #include "foucaultview.h"
 #include "ui_foucaultview.h"
 #include "mirrordlg.h"
-#include "opencv/cv.h"
+#include <opencv2/opencv.hpp>
 #include "opencv/highgui.h"
 #include "simulationsview.h"
 #include <QVector>
@@ -694,4 +694,3 @@ void foucaultView::on_pushButton_clicked()
     needsDrawing = true;
     on_makePb_clicked();
 }
-
