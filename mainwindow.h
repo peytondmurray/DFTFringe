@@ -47,6 +47,7 @@
 #include "astigstatsdlg.h"
 #include "wavefrontfilterdlg.h"
 #include "outlineplots.h"
+#include "appversion.h"
 class regionEditTools;
 namespace Ui {
 class MainWindow;

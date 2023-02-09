@@ -21,6 +21,7 @@
 #include <QDialog>
 #include <QImage>
 #include <opencv2/core/core.hpp>
+#include <qpainter.h>
 namespace Ui {
 class igramIntensity;
 }

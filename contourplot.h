@@ -27,8 +27,10 @@
 #include "wavefront.h"
 # include <qwt_picker.h>
 # include <qwt_plot_picker.h>
+#include <qwt_matrix_raster_data.h>
+
 class MyZoomer;
-class SpectrogramData: public QwtRasterData
+class SpectrogramData: public QwtMatrixRasterData
 {
 public:
     SpectrogramData();

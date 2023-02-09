@@ -20,6 +20,7 @@
 
 #include <QWidget>
 #include <qwt_plot.h>
+#include <qwt_text.h>
 #include "wavefront.h"
 #include <opencv2/opencv.hpp>
 #include <qwt_plot_legenditem.h>

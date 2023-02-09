@@ -86,4 +86,3 @@ imageHisto::imageHisto( Mat im)
     updateBrightnessContrast(0, 0);
     waitKey();
 }
-

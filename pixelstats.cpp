@@ -1,9 +1,10 @@
 #include "pixelstats.h"
+#include <qwt_text.h>
 #include "ui_pixelstats.h"
 #include <qwt_plot.h>
 #include <qwt_plot_histogram.h>
 #include <qwt_plot_marker.h>
-#include <qdebug>
+#include <QDebug>
 #include <QScreen>
 #include <QScrollBar>
 #include <QVBoxLayout>

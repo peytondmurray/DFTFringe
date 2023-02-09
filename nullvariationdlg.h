@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <qwt_plot.h>
+#include "qwt_text.h"
 #include <QTimer>
 namespace Ui {
 class nullVariationDlg;

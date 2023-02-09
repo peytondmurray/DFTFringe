@@ -21,6 +21,7 @@
 #include <QWidget>
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
+#include <opencv2/core/core_c.h>
 #include "igramarea.h"
 #include "dfttools.h"
 #include <QImage>
@@ -28,6 +29,7 @@
 #include <string>
 #include "psi_dlg.h"
 #include "psiphasedisplay.h"
+#include <float.h>
 using namespace cv;
 extern void showData(const std::string& txt, cv::Mat mat, bool useLog = false);
 extern QImage showMag(cv::Mat complexI, bool show = false, const char *title = "FFT", bool doLog = true, double gamma = 0);

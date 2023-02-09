@@ -445,4 +445,3 @@ void outlineDialog::on_outlineThickness_valueChanged(int arg1)
 {
     updateOutline();
 }
-

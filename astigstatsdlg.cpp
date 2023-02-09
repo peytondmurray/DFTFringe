@@ -1,4 +1,5 @@
 #include "astigstatsdlg.h"
+#include "qwt_scale_map.h"
 #include "ui_astigstatsdlg.h"
 #include "circleutils.h"
 #include "circle.h"
@@ -35,6 +36,13 @@
 #include "zernikedlg.h"
 #include <QSpinBox>
 #include <QLabel>
+#include <QList>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <qwt_plot_histogram.h>
+
+#define SDHEIGHT 250
 QString intro( "<p style = font-size:16px ;>Astigmatism values vary from sample to sample due to air currents and placement on the test stand."
                " This report displays that variabity and shows when enough samples have been obtained to"
                " average out the variability of air currents at each mirror rotation. The first plot shows an overview"
@@ -503,12 +511,6 @@ void astigStatsDlg::on_bestFitCB_clicked(bool checked)
 {
     plot();
 }
-#include <Qlist>
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <qwt_plot_histogram.h>
-#define SDHEIGHT 250
 QwtPlot *makeSDPlot(cv::Mat hist, double min, double max, double mean, int size, int width, int height){
     // Quantize the hue to 30 levels
     // and the saturation to 32 levels

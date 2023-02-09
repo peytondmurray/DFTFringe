@@ -5,6 +5,7 @@
 #include <QString>
 #include <QVector>
 #include <QObject>
+#include <math.h>
 class myPlotPicker;
 class QwtPlotMarker;
 class QwtPlotCurve;

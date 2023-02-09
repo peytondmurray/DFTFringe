@@ -27,7 +27,7 @@ psfPlot::psfPlot(QWidget *parent) :
 {
     ui->setupUi(this);
     QwtPlotLegendItem *customLegend = new QwtPlotLegendItem();
-    customLegend->setAlignment(Qt::AlignLeft | Qt::AlignBottom);
+    customLegend->setAlignmentInCanvas(Qt::AlignLeft | Qt::AlignBottom);
     customLegend->attach(this);
     QwtPlotTextLabel *t = new QwtPlotTextLabel();
     QwtText title( "PSF" );
@@ -68,4 +68,3 @@ void psfPlot::setData(cv::Mat wf, QString label, QPen color, bool doLog){
     replot();
     show();
 }
-

@@ -8,9 +8,21 @@ project(
 )
 
 qt5_mod = import('qt5')
-qt5widgets = dependency(
+qt5 = dependency(
   'qt5',
-  modules : ['Network', 'Xml', 'Multimedia', 'MultimediaWidgets', 'Widgets', 'Concurrent', 'Charts', 'PrintSupport', 'Core', 'Gui', 'OpenGL']
+  modules : [
+    'Network',
+    'Xml',
+    'Multimedia',
+    'MultimediaWidgets',
+    'Widgets',
+    'Concurrent',
+    'Charts',
+    'PrintSupport',
+    'Core',
+    'Gui',
+    'OpenGL'
+  ],
 )
 
 moc_headers = [
@@ -344,7 +356,6 @@ ui_files = [
 
 processed = qt5_mod.preprocess(
   moc_headers : moc_headers,   # Only headers that need moc should be put here
-  # moc_sources : 'helperFile.cpp', # must have #include"moc_helperFile.cpp"
   ui_files    : ui_files,
   qresources  : 'DFTResources.qrc',
 )
@@ -354,12 +365,12 @@ opencv = dependency('opencv4')
 lapack = dependency('lapack')
 blas = dependency('blas')
 qwt = dependency('Qt5Qwt6')
-qt5widgets = dependency('Qt5Widgets')
+qt5 = dependency('Qt5Widgets')
 
 q5exe = executable(
   'DFTFringe',
   sources : [sources, processed],
-  dependencies: [armadillo, opencv, lapack, blas, qwt, qt5widgets],
+  dependencies: [armadillo, opencv, lapack, blas, qwt, qt5],
   cpp_args: [
     '-w'
   ]

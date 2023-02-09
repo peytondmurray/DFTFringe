@@ -26,6 +26,7 @@
 #include <fstream>
 #include <sstream>
 
+#include "appversion.h"
 #include "dftarea.h"
 #include "igramarea.h"
 #include "profileplot.h"

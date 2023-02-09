@@ -49,10 +49,13 @@
 
 
 
+
 #ifndef _WIN32
     #include <unistd.h>
     #define Sleep(x) usleep(1000 * x)
 #endif
+
+const int ms = 1000;
 using namespace QtConcurrent;
 std::vector<wavefront*> g_wavefronts;
 int g_currentsurface = 0;
@@ -1117,7 +1120,7 @@ void MainWindow::batchProcess(QStringList fileList){
 #ifdef Q_OS_WIN
         Sleep(uint(1000));
 #else
-        struct timespec ts = { 1000 / 1000, (ms % 1000) * 1000 * 1000 };
+        ts = { 1000 / 1000, (ms % 1000) * 1000 * 1000 };
         nanosleep(&ts, NULL);
 #endif
         m_batchMakeSurfaceReady = false;
@@ -1158,7 +1161,11 @@ void MainWindow::batchProcess(QStringList fileList){
 
             m_surfaceManager->deleteCurrent();
             if (shouldBeep)
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || _WIN64
                 Beep(300,250);
+#else
+                cout << '\a';
+#endif
         }
         else{
             QPointF astig(wf->InputZerns[4], wf->InputZerns[5]);

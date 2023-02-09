@@ -2,6 +2,7 @@
 #include "ui_edgeplot.h"
 #include <cmath>
 #include <QSettings>
+
 EdgePlot::EdgePlot(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::EdgePlot)
@@ -95,7 +96,3 @@ void EdgePlot::on_power_valueChanged(int value)
 {
     Update();
 }
-
-
-
-

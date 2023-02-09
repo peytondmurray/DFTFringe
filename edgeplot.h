@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include <QtCharts/QtCharts>
+#include <QtCharts/QChart>
+
 namespace Ui {
 class EdgePlot;
 }

@@ -20,6 +20,7 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include <opencv2/opencv.hpp>
+#include <opencv2/core/core_c.h>
 class imageHisto
 {
 public:

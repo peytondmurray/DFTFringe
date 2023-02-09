@@ -19,6 +19,7 @@
 #define ROTATIONDLG_H
 
 #include <QDialog>
+#include <opencv2/imgproc/types_c.h>
 
 namespace Ui {
 class RotationDlg;

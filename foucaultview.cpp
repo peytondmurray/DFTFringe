@@ -2,7 +2,7 @@
 #include "ui_foucaultview.h"
 #include "mirrordlg.h"
 #include <opencv2/opencv.hpp>
-#include "opencv/highgui.h"
+#include <opencv2/highgui/highgui.hpp>
 #include "simulationsview.h"
 #include <QVector>
 #include <QMenu>
