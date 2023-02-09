@@ -21,7 +21,8 @@ qt5 = dependency(
     'PrintSupport',
     'Core',
     'Gui',
-    'OpenGL'
+    'OpenGL',
+    'DataVisualization'
   ],
 )
 
@@ -117,7 +118,6 @@ moc_headers = [
   'boundary.h',
   'myutils.h',
   'pixelstats.h',
-  'utils.h',
   'circleutils.h',
   'circle.h',
   'averagewavefrontfilesdlg.h',
@@ -144,7 +144,11 @@ moc_headers = [
   'mikespsiinterface.h',
   'psitiltoptions.h',
   'contourrulerparams.h',
-  'zernikesmoothingdlg.h'
+  'zernikesmoothingdlg.h',
+  'generatetargetdlg.h',
+  'astigstatsdlg.h',
+  'showaliasdlg.h',
+  'outlinestatsdlg.h'
 ]
 
 sources = [
@@ -266,6 +270,7 @@ sources = [
   'psitiltoptions.cpp',
   'contourrulerparams.cpp',
   'zernikesmoothingdlg.cpp',
+  'utils.cpp',
 ]
 
 ui_files = [
@@ -365,7 +370,6 @@ opencv = dependency('opencv4')
 lapack = dependency('lapack')
 blas = dependency('blas')
 qwt = dependency('Qt5Qwt6')
-qt5 = dependency('Qt5Widgets')
 
 q5exe = executable(
   'DFTFringe',

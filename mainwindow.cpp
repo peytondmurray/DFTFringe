@@ -46,6 +46,8 @@
 #include "regionedittools.h"
 #include "utils.h"
 #include "colorchannel.h"
+#include "unwraperrorsview.h"
+#include "transformwavefrontdlg.h"
 
 
 
@@ -266,7 +268,7 @@ const QString toolButtonStyle("QToolButton {"
     openWaveFrontonInit(args);
 
 }
-int showmem(QString t);
+
 void MainWindow::openWaveFrontonInit(QStringList args){
     QProgressDialog pd("    Loading wavefronts in PRogress.", "Cancel", 0, 100);
     pd.setRange(0, args.size());
@@ -1470,7 +1472,6 @@ void MainWindow::on_actionCamera_Calibration_triggered()
     camWiz->show();
 
 }
-#include "unwraperrorsview.h"
 void MainWindow::on_actionShow_unwrap_errors_triggered()
 {
     m_surfaceManager->showUnwrap();
@@ -1735,7 +1736,6 @@ void MainWindow::on_autoOutlineHelp_clicked()
     QString link = qApp->applicationDirPath() + "/res/Help/outlineing.html";
     QDesktopServices::openUrl(QUrl(link));
 }
-#include "transformwavefrontdlg.h"
 void MainWindow::on_actionwave_front_transforms_triggered()
 {
    m_surfaceManager->transform();

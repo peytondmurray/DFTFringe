@@ -7,6 +7,7 @@
 #include <QMap>
 #include <QPointF>
 #include <qwt_plot_item.h>
+#include <QVariant>
 class QwtPlot;
 class QwtPlotPicker;
 class Zoomer;
