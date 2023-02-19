@@ -30,46 +30,32 @@ moc_headers = [
   'mainwindow.h',
   'arbitrarywavefronthelp.h',
   'arbitrarywavwidget.h',
-  'bezier.h',
-  'cpoint.h',
   'defocusdlg.h',
   'edgeplot.h',
   'igramarea.h',
-  'circleoutline.h',
-  'gplus.h',
-  'graphicsutilities.h',
   'dfttools.h',
   'dftarea.h',
   'oglrendered.h',
   'pdfcalibrationdlg.h',
   'profileplot.h',
   'psiresizeimagesdlg.h',
-  'spline.h',
   'surface3dcontrolsdlg.h',
   'surfacegraph.h',
-  'surfacelightingproxy.h',
   'userdrawnprofiledlg.h',
-  'wavefront.h',
   'contourplot.h',
   'contourtools.h',
-  'dftcolormap.h',
   'surfaceanalysistools.h',
   'prefsdlg.h',
   'surfacemanager.h',
   'zernikedlg.h',
   'zernikeprocess.h',
   'mirrordlg.h',
-  'zernikes.h',
   'metricsdisplay.h',
   'reviewwindow.h',
-  'vortex.h',
-  'wavefrontstats.h',
   'wavefrontloader.h',
   'rotationdlg.h',
   'wftstats.h',
   'surfacepropertiesdlg.h',
-  'punwrap.h',
-  'imagehisto.h',
   'colorchanneldisplay.h',
   'intensityplot.h',
   'igramintensity.h',
@@ -105,7 +91,6 @@ moc_headers = [
   'zernikeeditdlg.h',
   'settingsgeneral2.h',
   'nullmarginhelpdlg.h',
-  'plotcolor.h',
   'cameracalibwizard.h',
   'camwizardpage1.h',
   'camcalibrationreviewdlg.h',
@@ -115,13 +100,8 @@ moc_headers = [
   'singleapplication.h',
   'singleapplication_p.h',
   'messagereceiver.h',
-  'boundary.h',
-  'myutils.h',
   'pixelstats.h',
-  'circleutils.h',
-  'circle.h',
   'averagewavefrontfilesdlg.h',
-  'astigzoomer.h',
   'astigscatterplot.h',
   'wavefrontfilterdlg.h',
   'myplotpicker.h',
@@ -141,7 +121,6 @@ moc_headers = [
   'psi_dlg.h',
   'psiphasedisplay.h',
   'outlinedialog.h',
-  'mikespsiinterface.h',
   'psitiltoptions.h',
   'contourrulerparams.h',
   'zernikesmoothingdlg.h',
@@ -359,11 +338,7 @@ ui_files = [
   'zernikesmoothingdlg.ui',
 ]
 
-processed = qt5_mod.preprocess(
-  moc_headers : moc_headers,   # Only headers that need moc should be put here
-  ui_files    : ui_files,
-  qresources  : 'DFTResources.qrc',
-)
+inc = include_directories('.')
 
 armadillo = dependency('armadillo')
 opencv = dependency('opencv4')
@@ -371,11 +346,15 @@ lapack = dependency('lapack')
 blas = dependency('blas')
 qwt = dependency('Qt5Qwt6')
 
-q5exe = executable(
+ui = qt5_mod.compile_ui(sources: ui_files)
+moc = qt5_mod.compile_moc(headers: moc_headers, include_directories: inc, dependencies: qt5)
+resources = qt5_mod.compile_resources(sources: ['DFTResources.qrc'])
+translations = qt5_mod.compile_translations(ts_files: ['dftfringe_fr.ts'])
+
+executable(
   'DFTFringe',
-  sources : [sources, processed],
+  sources : [sources, resources, ui, moc],
+  include_directories: inc,
   dependencies: [armadillo, opencv, lapack, blas, qwt, qt5],
-  cpp_args: [
-    '-w'
-  ]
+  cpp_args: ['-g', '-O0'],
 )
